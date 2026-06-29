@@ -41,6 +41,10 @@ p {
   text-align: justify;
 }
 
+p em {
+  font-size: 20px;
+}
+
 td {
   font-size: 5px;
   padding: 2px;
