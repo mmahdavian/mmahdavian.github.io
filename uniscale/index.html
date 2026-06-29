@@ -45,9 +45,10 @@
 
 <!--Links-->
 <div class="container" style="text-align:center; padding:1rem">
-    <h3 style="text-align:center; padding-top:1rem; padding-bottom: 2em">
+    <h3 style="text-align:center; padding-top:1rem; padding-bottom:1em">
       <a class="label label-info" href="https://arxiv.org/abs/2602.23224">Paper</a>
     </h3>
+    <img src="../IROS_UniScale_submit/figures/first_fig3.png" alt="UniScale teaser" class="text-center" style="width: 100%; max-width: 1200px">
 </div>
 
 
@@ -58,6 +59,59 @@
     <p>
 We present UniScale, a unified, scale-aware multi-view 3D reconstruction framework for robotic applications that flexibly integrates geometric priors through a modular, semantically informed design. In vision-based robotic navigation, the accurate extraction of environmental structure from raw image sequences is critical for downstream tasks. UniScale addresses this challenge with a single feed-forward network that jointly estimates camera intrinsics and extrinsics, scale-invariant depth and point maps, and the metric scale of a scene from multi-view images, while optionally incorporating auxiliary geometric priors when available. By combining global contextual reasoning with camera-aware feature representations, UniScale is able to recover the metric-scale of the scene. In robotic settings where camera intrinsics are known, they can be easily incorporated to improve performance, with additional gains obtained when camera poses are also available. This co-design enables robust, metric-aware 3D reconstruction within a single unified model. Importantly, UniScale does not require training from scratch, and leverages world priors exhibited in pre-existing models without geometric encoding strategies, making it particularly suitable for resource-constrained robotic teams. We evaluate UniScale on multiple benchmarks, demonstrating strong generalization and consistent performance across diverse environments. We will release our implementation upon acceptance.
     </p>
+</div>
+
+
+<div class="container">
+    <h3>Contributions</h3>
+    <hr/>
+    <ul style="text-align:left; font-size:1.05em; line-height:2em;">
+        <li>We propose a unified framework for multi-view metric 3D reconstruction that supports the injection of camera priors for robotic applications.</li>
+        <li>We introduce a modular metric-scale head that recovers real-world scale by fine-tuning globally learned features, leveraging image, camera, and aggregated patch tokens from VGGT.</li>
+        <li>We design a semantic-aware prior injection mechanism that adapts the injection process according to the role of each embedding.</li>
+        <li>Our modular design enables seamless integration into diverse robotic 3D reconstruction frameworks.</li>
+        <li>We achieve competitive or superior performance compared to prior unified and single-task feed-forward approaches across multiple benchmarks.</li>
+    </ul>
+</div>
+
+
+<div class="container">
+    <h3>Method</h3>
+    <hr/>
+    <div style="text-align:center; padding-bottom:1.5rem;">
+        <img src="../IROS_UniScale_submit/figures/UniScale.png" alt="UniScale overview" class="text-center" style="width: 100%; max-width: 1200px">
+        <p><em>Overview of the UniScale framework.</em></p>
+    </div>
+    <div style="text-align:center;">
+        <img src="../IROS_UniScale_submit/figures/scale_head2.png" alt="Scale head" class="text-center" style="width: 100%; max-width: 1200px">
+        <p><em>Modular metric-scale head design.</em></p>
+    </div>
+</div>
+
+
+<div class="container">
+    <h3>Results</h3>
+    <hr/>
+
+    <div style="text-align:center; padding-bottom:2rem;">
+        <embed src="../IROS_UniScale_submit/figures/wild/tum_table-crop.pdf" type="application/pdf" style="width:100%; height:500px;">
+        <p><em>Results on TUM dataset.</em></p>
+    </div>
+
+    <div style="text-align:center; padding-bottom:2rem;">
+        <embed src="../IROS_UniScale_submit/figures/wild/euroc-crop.pdf" type="application/pdf" style="width:100%; height:500px;">
+        <p><em>Results on EuRoC dataset.</em></p>
+    </div>
+
+    <div style="text-align:center; padding-bottom:2rem;">
+        <embed src="../IROS_UniScale_submit/figures/compare/oxford-injection-crop.pdf" type="application/pdf" style="width:100%; height:500px;">
+        <p><em>Qualitative comparison on the Oxford dataset.</em></p>
+    </div>
+
+    <div style="text-align:center; padding-bottom:2rem;">
+        <img src="../IROS_UniScale_submit/figures/dense_n/dense-n-view-v3.png" alt="Dense N-view results" class="text-center" style="width: 100%; max-width: 1200px">
+        <p><em>Dense N-view reconstruction results.</em></p>
+    </div>
 </div>
 
 
